@@ -15,7 +15,7 @@ RSpec.describe BestPlayerService do
     end
 
     context 'when there is a perfect player' do
-      let!(:player4) { create(:player, games_played: 10, games_won: 10) }
+      let!(:player4) { create(:player, :perfect_player) }
 
       it 'returns the perfect player' do
         expect(BestPlayerService.new.best_player).to eq player4
